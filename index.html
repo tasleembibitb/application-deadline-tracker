@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Application Deadline Tracker — live countdowns to job and exam deadlines, with a checklist for each one, so nothing closes while you are busy.">
+  <title>Application Deadline Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo" aria-hidden="true">TB</div>
+      <div>
+        <h1>Application Deadline Tracker</h1>
+        <p class="tagline">Every deadline in one place — with a countdown and a checklist</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro card">
+      <h2>How it works</h2>
+      <p>Job and exam deadlines close on different days, and the real work — a
+        password, a fee, a challan, a document — is due <strong>before</strong> the
+        last date. Add each deadline, tick off its steps as you finish them, and
+        the tracker shows the live countdown and which step is still blocking you.
+        Your list is saved in your browser, so it is still there when you come back.</p>
+      <p class="demo-note">Demo example pre-filled below with <strong>sample deadlines</strong>:
+        four real public closing dates for November–December 2026. Add your own,
+        change any date, or delete the samples — the countdowns update instantly.</p>
+    </section>
+
+    <section class="card">
+      <h2>Add a deadline</h2>
+      <form id="add-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="new-title">What is it?</label>
+            <input type="text" id="new-title" placeholder="e.g. SPSC CCE application" required maxlength="80">
+          </div>
+          <div class="field">
+            <label for="new-date">Last date</label>
+            <input type="date" id="new-date" required>
+          </div>
+          <div class="field">
+            <label for="new-time">Closing time (optional)</label>
+            <input type="time" id="new-time" value="17:00">
+          </div>
+          <div class="field">
+            <label for="new-step">First step to do</label>
+            <input type="text" id="new-step" placeholder="e.g. Set my own password" maxlength="120">
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Add deadline</button>
+          <button type="button" class="btn btn-secondary" id="reset-demo">Reset to demo example</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="results" aria-live="polite">
+      <h2>Your deadlines — nearest first</h2>
+      <p id="summary" class="summary"></p>
+      <div class="results-list" id="deadline-list"></div>
+    </section>
+
+    <section class="card disclaimer">
+      <h2>Important note</h2>
+      <p>This is a <strong>demo tracker</strong>. The sample dates are public closing
+        dates, not your personal application details — never put a password, CNIC
+        number, bank detail or application number into a tracker or a public post.
+        Always check the official portal for the final date and fee before you apply.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Application Deadline Tracker &middot; Built by Tasleem Bibi &middot; Sukkur, Sindh, Pakistan</p>
+      <p class="footer-note">Sample deadlines only. Check the official portal for the final date.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
